@@ -32,6 +32,8 @@ env:
 jobs:
   generate:
     name: Generate and commit skills
+    # Only run in the upstream repo; copies don't have the GOOGLEWORKSPACE_BOT_TOKEN secret.
+    if: github.repository == 'googleworkspace/cli'
     runs-on: ubuntu-latest
     permissions:
       contents: write
